@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ivd-app</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Submit Form</h2>
+    <form action="/a-summit" method="post">
+      <div class="form-row">
+        <label for="udi">UDI:</label>
+        <input type="text" id="udi" name="udi" required>
+      </div>
+      <div class="form-row">
+        <label for="captcha">CAPTCHA:</label>
+        <img id="captcha-img" src="{{ 'data:image/png;base64,'+cap['imageBase64'] }}" alt="CAPTCHA Image">
+        <input type="text" id="captcha" name="captcha" required>
+      </div>
+      <input type="hidden" id="transaction-id" name="transactionId" value="{{cap['transactionId']}}">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

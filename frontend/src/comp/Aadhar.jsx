@@ -15,7 +15,9 @@ function Aadhar() {
 
   const fetchCaptchaImage = async () => {
     try {
-      const response = await fetch(API_URL + "/aadhar");
+      const response = await fetch(API_URL + "/verify/aadhar", {
+        method: "POST",
+      });
 
       const data = await response.json();
       console.log(response);

@@ -37,7 +37,8 @@ def aadhar_getStaus(udi, captcha, capId):
         "uid": udi,
         "captchaTxnId": capId,
         "captcha": captcha,
-        "transactionId": transaction_id
+        "transactionId": transaction_id,
+        "captchaLogic": "V3",
     }
     headers = {
         "Content-Type": "application/json"

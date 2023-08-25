@@ -40,5 +40,5 @@ def pan_getStatus(panNumber, fullName, mobNo, dob, otp, reqId):
         print(response.json())
         return response.json()
     else:
-        print(f"POST request failed. Status code: {response.status_code}")
+        print(f"POST request failed. Status code1: {response.status_code}")
         return response.status_code

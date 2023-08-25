@@ -29,14 +29,19 @@ def index():
         return jsonify({'data': pridict})
 
 
-@ app.route('/aadhar')
-def aadhar():
-    cap = aadhar_generate()
-    return jsonify(cap)
+@ app.route('/verify/<string:id>', methods=['POST'])
+def verify_id(id):
+    if id == "aadhar":
+        cap = aadhar_generate()
+        return jsonify(cap)
+    elif id == "pan":
+        return "pan"
+    else:
+        return "cannot verify id"
 
 
 @ app.route('/aadhar-summit', methods=['POST'])
-def process_form():
+def process_aadhar():
     udi = request.json.get('udi')
     captcha = request.json.get('captcha')
     transactionId = request.json.get('transactionId')

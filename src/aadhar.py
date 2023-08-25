@@ -25,7 +25,7 @@ def aadhar_generate():
         return captcha_response
 
     else:
-        print("Failed to fetch captcha. Status code:", response.status_code)
+        print("Failed to fetch captcha. Status code: 1", response.status_code)
         return response.status_code
 
 
@@ -38,7 +38,8 @@ def aadhar_getStaus(udi, captcha, capId):
         "uid": udi,
         "captchaTxnId": capId,
         "captcha": captcha,
-        "transactionId": transaction_id
+        "transactionId": transaction_id,
+        "captchaLogic": "V3",
     }
     headers = {
         "Content-Type": "application/json"

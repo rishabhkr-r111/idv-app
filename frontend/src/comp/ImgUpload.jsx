@@ -46,16 +46,27 @@ function ImgUpload() {
   };
 
   return (
-    <div>
-      <h2>Image Upload</h2>
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleImageChange}
-        name="image"
-      />
-      <button onClick={handleUpload}>Upload Image</button>
-      {response && <p>Server Response: {response}</p>}
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+      <div className="max-w-md p-8 bg-white rounded-lg shadow-md">
+        <h2 className="text-xl font-semibold mb-4 text-center">Image Upload</h2>
+        <div className="flex flex-col items-center">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            className="mb-2"
+          />
+          <button
+            onClick={handleUpload}
+            className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+          >
+            Upload Image
+          </button>
+        </div>
+        {response && (
+          <p className="mt-4 text-center">Server Response: {response}</p>
+        )}
+      </div>
     </div>
   );
 }

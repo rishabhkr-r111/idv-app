@@ -24,7 +24,7 @@ def aadhar_generate():
         return captcha_response
 
     else:
-        print("Failed to fetch captcha. Status code: 1", response.status_code)
+        print("Failed to fetch captcha. Status code: ", response.status_code)
         return response.status_code
 
 

@@ -53,4 +53,3 @@ def aadhar_getStaus(udi, captcha, capId):
     else:
         print("Request failed with status code:", response.status_code)
         print("Response:", response.text)
-        print("hi")

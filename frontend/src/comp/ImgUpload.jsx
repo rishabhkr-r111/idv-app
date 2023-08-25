@@ -29,7 +29,7 @@ function ImgUpload() {
       if (responseData["data"] == "Aadhaar") {
         navigate("/verify-aadhar");
       } else if (responseData["data"] == "PAN") {
-        console.log("verify pan");
+        navigate("/verify-pan");
       } else if (responseData["data"] == "Driving Licence") {
         console.log("verify Driving Licence");
       } else if (responseData["data"] == "Voter ID") {

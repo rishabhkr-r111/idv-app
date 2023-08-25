@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 from src.aadhar import aadhar_generate, aadhar_getStaus
+from src.pan import pan_generate_otp, pan_getStatus
 from src.classifier.imageClassifier import imageClassifier
 import asyncio
 import os
@@ -35,7 +36,12 @@ def verify_id(id):
         cap = aadhar_generate()
         return jsonify(cap)
     elif id == "pan":
-        return "pan"
+        panNumber = request.json.get("panNumber")
+        fullName = request.json.get("fullName")
+        mobNo = request.json.get("mobNo")
+        dob = request.json.get("dob")
+        responce = pan_generate_otp(panNumber, fullName, mobNo, dob)
+        return jsonify(responce)
     else:
         return "cannot verify id"
 
@@ -48,6 +54,19 @@ def process_aadhar():
     response = aadhar_getStaus(udi, captcha, transactionId)
 
     return response
+
+
+@app.route('/pan-summit', methods=['POST'])
+def process_pan():
+    panNumber = request.json.get("panNumber")
+    fullName = request.json.get("fullName")
+    mobNo = request.json.get("mobNo")
+    dob = request.json.get("dob")
+    otp = request.json.get("otp")
+    reqId = request.json.get("reqId")
+
+    response = pan_getStatus(panNumber, fullName, mobNo, dob, otp, reqId)
+    return jsonify(response)
 
 
 if __name__ == '__main__':

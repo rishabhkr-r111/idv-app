@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import ImgUpload from "./comp/ImgUpload";
 import Aadhar from "./comp/Aadhar";
+import Pan from "./comp/Pan";
 const API_URL = import.meta.env.VITE_API_URL;
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ImgUpload />} />
         <Route path="verify-aadhar" element={<Aadhar />} />
+        <Route path="verify-pan" element={<Pan />} />
       </Routes>
     </>
   );

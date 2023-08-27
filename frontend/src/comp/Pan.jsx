@@ -60,8 +60,7 @@ function Pan() {
       setVerificationStatus("otp");
       const data = await finalResponse.json();
       console.log(JSON.stringify(data));
-      setVerificationStatus("success");
-      setStatus(data);
+      setStatus(JSON.stringify(data));
     }
   };
 
@@ -109,7 +108,7 @@ function Pan() {
         </form>
       )}
 
-      {verificationStatus === "success" && <div> {status} </div>}
+      {verificationStatus === "otp" && <div> {status} </div>}
     </div>
   );
 }

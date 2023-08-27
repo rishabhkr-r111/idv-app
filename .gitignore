@@ -130,4 +130,5 @@ dmypy.json
 
 src/classifier/test_images/private
 src/classifier/classifier_model.h5
+src/driving.py
 uploads/

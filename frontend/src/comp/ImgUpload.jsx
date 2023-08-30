@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const API_URL = import.meta.env.VITE_API_URL;
-import { AiOutlineCloudUpload } from "react-icons/ai";
-import { AiOutlineCamera } from "react-icons/ai";
+// import { AiOutlineCloudUpload } from "react-icons/ai";
+// import { AiOutlineCamera } from "react-icons/ai";
 
 function ImgUpload() {
   const navigate = useNavigate();
@@ -90,14 +90,14 @@ function ImgUpload() {
         </label>
       </div>
       {/* </div> */}
-      <div className="flex gap-4 items-center mt-7 bg-white rounded-lg px-7 justify-between py-3">
+      {/* <div className="flex gap-4 items-center mt-7 bg-white rounded-lg px-7 justify-between py-3">
         <button>
           <AiOutlineCloudUpload size={30} />
         </button>
         <button>
           <AiOutlineCamera size={30} />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -53,32 +53,44 @@ function Aadhar() {
   };
 
   return (
-    <div>
-      <h2>Verify Aadhar</h2>
-      <form onSubmit={handleAadharSubmit}>
-        <label htmlFor="aadharNo">Aadhar Number:</label>
-        <input
-          type="text"
-          id="aadharNo"
-          value={aadharNo}
-          onChange={(e) => setAadharNo(e.target.value)}
-          required
-        />
+    <div className="h-screen w-screen bg-gradient-to-bl from-gray-700 via-gray-900 to-black items-center justify-center flex">
+      <div className="flex flex-col h-1/2 w-1/3 bg-white text-black rounded-lg p-3 items-center gap-3">
+        <h2 className="text-2xl font-bold">Verify Aadhar</h2>
+        <form
+          onSubmit={handleAadharSubmit}
+          className="flex flex-col h-full gap-3 w-full justify-between"
+        >
+          <label htmlFor="aadharNo">Aadhar Number:</label>
+          <input
+            type="text"
+            id="aadharNo"
+            value={aadharNo}
+            onChange={(e) => setAadharNo(e.target.value)}
+            required
+            className="border-2 h-9 pl-3 border-black rounded-md"
+          />
 
-        <label htmlFor="captcha">Captcha:</label>
-        <input
-          type="text"
-          id="captcha"
-          value={captcha}
-          onChange={(e) => setCaptcha(e.target.value)}
-          required
-        />
-        <img src={`data:image/png;base64,${captchaImage}`} alt="Captcha" />
+          <label htmlFor="captcha">Captcha:</label>
+          <input
+            type="text"
+            id="captcha"
+            value={captcha}
+            onChange={(e) => setCaptcha(e.target.value)}
+            required
+            className="border-2 h-9 pl-3 border-black rounded-md"
+          />
+          <img src={`data:image/png;base64,${captchaImage}`} alt="Captcha" />
 
-        <button type="submit">Verify</button>
+          <button
+            type="submit"
+            className="font-bold text-xl border rounded-lg py-3 bg-black text-white hover:text-black hover:bg-white duration-300"
+          >
+            Verify
+          </button>
 
-        <div>{aadharState}</div>
-      </form>
+          <div>{aadharState}</div>
+        </form>
+      </div>
     </div>
   );
 }

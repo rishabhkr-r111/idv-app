@@ -54,7 +54,7 @@ function Aadhar() {
 
   return (
     <div className="h-screen w-screen bg-gradient-to-bl from-gray-700 via-gray-900 to-black items-center justify-center flex">
-      <div className="flex flex-col h-1/2 w-1/3 bg-white text-black rounded-lg p-3 items-center gap-3">
+      <div className="flex flex-col w-1/3 bg-white text-black rounded-lg p-3 items-center gap-3">
         <h2 className="text-2xl font-bold">Verify Aadhar</h2>
         <form
           onSubmit={handleAadharSubmit}

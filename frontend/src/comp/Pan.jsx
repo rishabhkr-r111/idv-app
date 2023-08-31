@@ -65,48 +65,70 @@ function Pan() {
   };
 
   return (
-    <div>
-      {verificationStatus === "pending" && (
+    <div className="h-screen w-screen bg-gradient-to-r from-blue-200 to-cyan-200 items-center justify-center flex">
+      {verificationStatus === "pending" && <div className="flex flex-col w-1/3 bg-white text-black rounded-lg p-3 items-center gap-3">
+      <h2 className="text-2xl font-bold">Verify Pan card</h2>
+      
         <form onSubmit={handleVerificationSubmit}>
+          <h3>Pan number:</h3>
+          <div class="border-2 black ...">
           <input
             type="text"
             placeholder="PAN Number"
             value={panNumber}
             onChange={(e) => setPanNumber(e.target.value)}
-          />
+            className="border-2 h-9 pl-3 border-black rounded-md"
+          /></div>
+          <h3>Full name:</h3>
+          <div class="border-2 black ...">
           <input
             type="text"
             placeholder="Full Name"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-          />
+            className="border-2 h-9 pl-3 border-black rounded-md"
+          /></div>
+          <h3>Mobile number:</h3>
+          <div class="border-2 black ...">
           <input
             type="text"
             placeholder="Mobile Number"
             value={mobNo}
             onChange={(e) => setMobNo(e.target.value)}
-          />
+            className="border-2 h-9 pl-3 border-black rounded-md"
+          /></div>
+          <h3>Date of birth:</h3>
+          <div class="border-2 black ...">
           <input
             type="text"
-            placeholder="Date of Birth (YYYY-MM-DD)"
+            placeholder="DOB(YYYY-MM-DD)"
             value={dob}
             onChange={(e) => setDob(e.target.value)}
-          />
-          <button type="submit">Verify</button>
+            className="border-2 h-9 pl-3 border-black rounded-md"
+          /></div>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  Verify
+</button>
         </form>
-      )}
+      </div>}
 
-      {verificationStatus === "otp" && (
+      {verificationStatus === "otp" && (<div className="h-screen w-screen bg-gradient-to-r from-blue-200 to-cyan-200 items-center justify-center flex">
         <form onSubmit={handleFinalSubmit}>
+          <div class="border-2 black ...">
           <input
             type="text"
             placeholder="OTP"
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
-          />
-          <button type="submit">Submit</button>
+            className="border-2 h-9 pl-3 border-black rounded-md"
+          /></div>
+          <div>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  Submit
+</button>
+          </div>
         </form>
-      )}
+      </div>)}
 
       {verificationStatus === "otp" && <div> {status} </div>}
     </div>

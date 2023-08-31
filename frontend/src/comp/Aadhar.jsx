@@ -56,15 +56,15 @@ function Aadhar() {
 
   return (
     <div className="h-screen w-screen bg-gradient-to-r from-blue-200 to-cyan-200 items-center justify-center flex">
-      <div className="flex flex-col w-1/4 text-black rounded-lg p-3 items-center gap-3 bg-white drop-shadow-xl">
+      <div className="flex flex-col w-1/4 text-black rounded-lg p-0 m-0 items-center gap-3 bg-white drop-shadow-xl">
         {!aadharState && (
-          <div>
-            <h2 className="text-2xl font-bold text-center mb-4">
+          <div className="p-3">
+            <h2 className="text-2xl font-bold text-center mb-4 p-0 w-full">
               Verify Aadhar
             </h2>
             <form
               onSubmit={handleAadharSubmit}
-              className="flex flex-col h-full gap-3 w-full justify-between"
+              className="flex flex-col gap-3 w-full justify-between p-0"
             >
               <label htmlFor="aadharNo">Aadhar Number:</label>
               <input
